@@ -1,7 +1,7 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
-#include "find.h"
+#include "Array/find.h"
 #include "test-engine/test.h"
 
 void test_array(){

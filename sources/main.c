@@ -1,4 +1,4 @@
-#include "Array/test-array.h"
+#include "tests/test-array.h"
 #include "test-engine/test.h"
 
 int main(){
