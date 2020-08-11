@@ -31,8 +31,8 @@ int find_unique(int *arr, int size)
     /*
         return (find) unique number in range 
         if not found, return -1
-    */
-
+    */   
+    
 }
 
 int* find_duplicates(int *arr, int size)
