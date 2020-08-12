@@ -43,7 +43,7 @@ void enable_testing()
 void end_testing()
 {
     if (allTests - passed == 0) printf(color(boldGreen, "All tests passed! [%i/%i]\nAll scenario passed! [%i/%i]\n"), passed, allTests, passedScenario, allScenario);
-    else printf(color(boldRed, "Tests failed! [%i/%i]\nScenario failed! [%i/$i]\n"), allTests-passed, allTests, allScenario-passedScenario, allScenario);
+    else printf(color(boldRed, "Tests failed! [%i/%i]\nScenario failed! [%i/%i]\n"), allTests-passed, allTests, allScenario-passedScenario, allScenario);
     printf(color(blue, "END TESTING!\n    all tests: %i\n    passed: %i\n    all scenario: %i\n    passed scenario: %i\n"), allTests, passed, allScenario, passedScenario);
 }
 
@@ -110,7 +110,7 @@ void test_failed()
 
 void test_failed_values(void * a, void * b)
 {
-    printf(color(red, "    [%i|%i] TEST FAILED! expected: %i, got: %i \n"), scenarioCurrentTests, allTests, a, b);
+    printf(color(red, "    [%i|%i] TEST FAILED! got: %i, expected: %i \n"), scenarioCurrentTests, allTests, a, b);
 }
 
 bool test(bool condition) 

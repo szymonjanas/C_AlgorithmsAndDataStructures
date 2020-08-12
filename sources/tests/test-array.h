@@ -25,7 +25,16 @@ void test_array(){
     testc(find_duplicate(arr22, 9), 1);
     testc(find_duplicate(arr23, 8), -1);
 
-    
+    test_start_scenario("find unique");
+    int arr30[10] = {1,2,2,1,4,3,6,3,4,1};
+    int arr31[10] = {1,1,3,3,5,5,7,7,9,9};
+    testc(find_unique(arr30, 10), 6);
+    testc(find_unique(arr31, 10), -1);
+
+
+
+
+
 
     test_end_scenarios();
 }

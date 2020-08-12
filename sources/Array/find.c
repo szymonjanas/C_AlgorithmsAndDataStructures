@@ -32,7 +32,15 @@ int find_unique(int *arr, int size)
         return (find) unique number in range 
         if not found, return -1
     */   
-    
+    if (size == 0) return -1;
+    if (size == 1) return arr[0];
+    for (int i = 0, tsize = 1; i < size; ++i){
+        for (int j = 0; j < size; ++j)
+            if (i != j && arr[i] != arr[j]) ++tsize;
+        if (tsize == size) return arr[i];
+        else tsize = 1;
+    }
+    return -1;
 }
 
 int* find_duplicates(int *arr, int size)
