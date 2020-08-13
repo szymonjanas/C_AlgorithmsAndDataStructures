@@ -3,8 +3,8 @@
 int* find_missing(int *arr, int size) 
 {
     /*
-        return (find) missing number in range 1 - 100
-        if not found, return -1
+        return (find) ptr to missing number in range 1 - 100
+        if not found, return NULL
     */
 
     if (size == 0 || size == 1 || arr == NULL) return NULL;
@@ -20,8 +20,8 @@ int* find_missing(int *arr, int size)
 int* find_duplicate(int *arr, int size)
 {
     /*
-        return (find) duplicate number in range 
-        if not found, return -1
+        return (find) ptr to duplicate number in range 
+        if not found, return NULL
     */
     if (size == 0 || size == 1 || arr == NULL) return NULL;
     int *duplicate = (int*) malloc (sizeof(int));
@@ -37,8 +37,8 @@ int* find_duplicate(int *arr, int size)
 int* find_unique(int *arr, int size)
 {
     /*
-        return (find) unique number in range 
-        if not found, return -1
+        return (find) ptr to unique number in range 
+        if not found, return NULL
     */   
     if (size == 0 || arr == NULL) return NULL;
     int* unique = (int*) malloc (sizeof(int));
@@ -70,6 +70,10 @@ int* find_uniques(int *arr, int size)
 
 int* find_max(int *arr, size_t size)
 {
+    /*
+        return (find) ptr to maximum value in array
+        if not found, return NULL
+    */
     if (!size || !arr) return NULL;
     int *max = (int*) malloc (sizeof(int));
     *max = arr[0];
@@ -81,6 +85,10 @@ int* find_max(int *arr, size_t size)
 
 int* find_min(int *arr, size_t size)
 {
+    /*
+        return (find) ptr to minimum value in array
+        if not found, return NULL
+    */
     if (!size || !arr) return NULL;
     int *min = (int*) malloc (sizeof(int));
     *min = arr[0];
