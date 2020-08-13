@@ -1,5 +1,5 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
+#ifndef TEST_ENGINE
+#define TEST_ENGINE
 
 #include<stdio.h>
 #include <stdbool.h>

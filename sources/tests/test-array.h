@@ -4,6 +4,8 @@
 #include "Array/find.h"
 #include "test-engine/test.h"
 #include <stdio.h>
+#include <stdlib.h>
+
 void test_array(){
     test_start_scenario("find missing");
     int arr10[1] = {1};
@@ -31,8 +33,17 @@ void test_array(){
     testc(find_unique(arr30, 10), 6);
     testc(find_unique(arr31, 10), -1);
 
+    test_start_scenario("find max");
+    int arr40[10] = {0,1,2,3,4,5,6,7,8,9};
+    int arr41[10] = {1,1,2,2,2,3,1,1,3,3};
+    testc(find_max(NULL, 0), NULL);
+    testc(*find_max(arr40, 10), 9);
+    testc(*find_max(arr41, 10), 3);
 
-
+    test_start_scenario("find min");
+    testc(find_min(NULL, 0), NULL);
+    testc(*find_min(arr40, 10), 0);
+    testc(*find_min(arr41, 10), 1);
 
 
 

@@ -53,12 +53,24 @@ int* find_uniques(int *arr, int size)
 
 }
 
-int find_max(int *arr, int size)
+int* find_max(int *arr, size_t size)
 {
-
+    if (!size || !arr) return NULL;
+    if (size == 1) return arr[0];
+    int *max = (int*) malloc (sizeof(int));
+    *max = arr[0];
+    for (int i = 0; i < size; ++i)
+        if (arr[i] > *max) *max = arr[i];
+    return max;
 }
 
-int find_min(int *arr, int size)
+int* find_min(int *arr, size_t size)
 {
-
+    if (!size || !arr) return NULL;
+    if (size == 1) return arr[0];
+    int *min = (int*) malloc (sizeof(int));
+    *min = arr[0];
+    for (int i = 0; i < size; ++i)
+        if (arr[i] < *min) *min = arr[i];
+    return min;
 }
