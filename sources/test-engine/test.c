@@ -113,6 +113,12 @@ void test_failed_values(void * a, void * b)
     printf(color(red, "    [%i|%i] TEST FAILED! got: %i, expected: %i \n"), scenarioCurrentTests, allTests, a, b);
 }
 
+void test_failed_strs(void * a, void * b)
+{
+    printf(color(red, "    [%i|%i] TEST FAILED!\n             got: %s\n"), scenarioCurrentTests, allTests, a);
+    printf(color(red, "        expected: %s\n"), b);
+}
+
 bool test(bool condition) 
 {
     if (!enable) return false;
@@ -141,3 +147,34 @@ bool testc(void *a, void *b)
     return a == b;
 }
 
+char* arr_to_string(int *arr, size_t size)
+{
+    if (size == 0 || arr == NULL) return NULL;
+    char * str = (char*) malloc (sizeof(char)*size*2+2);
+    strcpy(str, "[");
+    char num[16];
+    for (int i = 0; i < size; ++i){
+        sprintf(num, "%i", *(arr+i));
+        strcat(str, num);
+        if (i < size-1) strcat(str, ",");
+    }
+    strcat(str, "]");
+    return str;
+}
+
+bool testIntArr(int *a, size_t size_a, int *b, size_t size_b)
+{
+    if (!enable) return false;
+    test_add();
+    if (size_a != size_b) return false;
+    if (size_a == 0 || size_b == 0) return true;
+    for (int i = 0; i < size_a; ++i){
+        if (*(a+i) != *(b+i)){
+            test_failed_strs(   arr_to_string(a, size_a),
+                                arr_to_string(b, size_b));
+            return false;
+        } 
+    }
+    test_passed();
+    return true;
+}

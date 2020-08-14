@@ -49,7 +49,10 @@ void test_array(){
     testc(*find_min(arr41, 10), 1);
     testc(*find_max(arr42, 1), 1);
 
-
+    test_start_scenario("find duplicates");
+    int arr50[10] = {0,1,2,3,4,5,6,7,8,9};
+    int arr51[10] = {1,1,2,2,2,3,1,1,3,3};
+    testIntArr(arr50, 10, arr51, 10);
 
     test_end_scenarios();
 }
