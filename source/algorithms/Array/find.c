@@ -1,6 +1,6 @@
 #include "find.h"
 
-int* find_missing(int *arr, int size) 
+int* find_missing(int *arr, size_t size) 
 {
     /*
         return (find) ptr to missing number in range 1 - 100
@@ -17,7 +17,7 @@ int* find_missing(int *arr, int size)
     return NULL;
 }
 
-int* find_duplicate(int *arr, int size)
+int* find_duplicate(int *arr, size_t size)
 {
     /*
         return (find) ptr to duplicate number in range 
@@ -34,7 +34,7 @@ int* find_duplicate(int *arr, int size)
     return NULL;
 }
 
-int* find_unique(int *arr, int size)
+int* find_unique(int *arr, size_t size)
 {
     /*
         return (find) ptr to unique number in range 
@@ -58,12 +58,23 @@ int* find_unique(int *arr, int size)
     return NULL;
 }
 
-int* find_duplicates(int *arr, int size)
+int* find_duplicates(int *arr, size_t size)
 {
-
+    /*
+        return (find) ptr to arr with duplicates number in range 
+        if not found, return NULL
+    */
+    if (size == 0 || size == 1 || arr == NULL) return NULL;
+    int *duplicates = (int*) malloc (sizeof(int)*size);
+    for (int i = 0, d = 0; i < size-1; ++i)
+        for (int j = i+1; j < size; ++j)
+            if (arr[i] == arr[j]){
+                duplicates[d++] = arr[i];
+            }
+    return duplicates;
 }
 
-int* find_uniques(int *arr, int size)
+int* find_uniques(int *arr, size_t size)
 {
 
 }
