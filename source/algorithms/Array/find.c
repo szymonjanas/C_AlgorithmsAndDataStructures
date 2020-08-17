@@ -58,27 +58,6 @@ int* find_unique(int *arr, size_t size)
     return NULL;
 }
 
-int* find_duplicates(int *arr, size_t size)
-{
-    /*
-        return (find) ptr to arr with duplicates number in range 
-        if not found, return NULL
-    */
-    if (size == 0 || size == 1 || arr == NULL) return NULL;
-    int *duplicates = (int*) malloc (sizeof(int)*size);
-    for (int i = 0, d = 0; i < size-1; ++i)
-        for (int j = i+1; j < size; ++j)
-            if (arr[i] == arr[j]){
-                duplicates[d++] = arr[i];
-            }
-    return duplicates;
-}
-
-int* find_uniques(int *arr, size_t size)
-{
-
-}
-
 int* find_max(int *arr, size_t size)
 {
     /*
